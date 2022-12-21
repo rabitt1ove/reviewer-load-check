@@ -1,0 +1,56 @@
+body {
+    margin: 20px
+}
+
+.alert-color {
+    border-color: #ff0000;
+}
+
+.teamSelect {
+    font-size: 20px;
+}
+
+#conditions dl dt {
+    width: 140px;
+    padding:10px 0;
+    float:left;
+    clear:both;
+}
+
+#conditions dl dd {
+    padding:10px 0;
+}
+
+button.search {
+    font-size: 20px;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th,td {
+    background-color: #ffffff;
+    border: 1px solid #ffcc66;
+    padding: 0 8px;
+    line-height: 40px;
+}
+
+thead th {
+    background-color: #fff5e5;
+    border: 1px solid #ffcc66;
+    color: #ff9900;
+}
+
+th.state, td.state {
+    text-align: center;
+}
+
+tbody tr:hover td {
+    background: #ccffff;
+}

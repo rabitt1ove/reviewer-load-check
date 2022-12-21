@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <meta name="author" content="Rakuma@yOkuno1201">
+        <meta charset="utf-8">
+        <title>Reviewer load check</title>
+        <link rel="stylesheet" type="text/css" href="../assets/stylesheets/application.css?ver=1.0.0">
+        <script src="https://cdn.jsdelivr.net/npm/vue@3.2.45/dist/vue.global.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.2.1/dist/axios.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.1/build/global/luxon.min.js" defer></script>
+        <script src="/assets/javascripts/application.js" defer></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>Reviewer load check</h1>
+            <div id="conditions">
+                <dl>
+                    <dt>state：</dt>
+                    <dd>
+                        <label v-for="label in reviewLabels">
+                            <input type="radio" v-model="reviewState" v-bind:value="label.value">{{ label.label }}
+                        </label>
+                    </dd>
+                    <dt>team：</dt>
+                    <dd>
+                        <select class="teamSelect" v-model="selectedTeam">
+                            <option v-for="option in teamOptions" v-bind:value="option">
+                                {{ option.name }}
+                            </option>
+                        </select>
+                    </dd>
+                    <dt>created from：</dt>
+                    <dd>
+                        <input type="date" v-model="createdFrom" size="40" :max="todayYmd" onkeydown="return false">
+                    </dd>
+                    <dt>created to：</dt>
+                    <dd>
+                        <input type="date" v-model="createdTo" size="40" :max="todayYmd" onkeydown="return false">
+                    </dd>
+                </dl>
+                <button class="search" v-on:click="onSearch" v-bind:disabled="processing">Search</button>
+            </div>
+            <hr>
+            <table>
+                <thead v-pre>
+                    <tr>
+                        <th class="index">No</th>
+                        <th class="id">GitHub ID</th>
+                        <th class="count">pr count</th>
+                        <th class="additions">additions</th>
+                        <th class="deletions">deletions</th>
+                        <th class="state">state</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(pr, index) in sortedByTotalChanges" v-bind:key="pr.id">
+                        <td class="index">{{ index + 1 }}</td>
+                        <td class="id">{{ pr.id }}</td>
+                        <td class="count">{{ pr.count }}</td>
+                        <td class="additions">{{ pr.sumAdditions }}</td>
+                        <td class="deletions">{{ pr.sumDeletions }}</td>
+                        <td class="state">{{ labels[pr.state] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
