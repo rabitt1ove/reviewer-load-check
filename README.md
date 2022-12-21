@@ -4,6 +4,8 @@ GitHub ID毎のPRレビュー負荷を数値で表示するWebアプリケーシ
 選択した`team`はローカルセッションに保存されます。
 
 # DEMO
+![image_6483441](https://user-images.githubusercontent.com/45308877/208905985-3c528188-5efd-453c-834c-a7d123b02a45.JPG)
+
 ## 検索条件
 - state:
   - ALL: 全てのPR
