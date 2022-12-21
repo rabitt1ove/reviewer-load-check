@@ -4,7 +4,7 @@ GitHub ID毎のPRレビュー負荷を数値で表示するWebアプリケーシ
 選択した`team`はローカルセッションに保存されます。
 
 # DEMO
-![image_6483441](https://user-images.githubusercontent.com/45308877/208906985-d5ba4ebe-ca3c-4c4b-ba84-ab75d3fbdfd5.JPG)
+<img src="https://user-images.githubusercontent.com/45308877/208906985-d5ba4ebe-ca3c-4c4b-ba84-ab75d3fbdfd5.JPG" width="350px">
 
 ## 検索条件
 - state:
