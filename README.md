@@ -48,7 +48,7 @@ Select scopesは以下の通り
 
 ## 2.チーム設定
 ### GitHubにチームを追加する
-- https://github.com/orgs/[オーナー名]/teams にチームを追加
+- `https://github.com/orgs/[オーナー名]/teams` にチームを追加
 ### ソースにチームを定義する
 - ソース`reviewer-load-check/assets/javascripts/application.js`の<br>
 `teamOptions:`に定義を追加する
